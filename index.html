@@ -465,10 +465,6 @@ body::after{
     <h2>OBRIGADO,<br><span id="tyName">ALUNO</span>!</h2>
     <div class="ty-divider"></div>
     <p>Recebemos suas respostas com sucesso.</p>
-    <p>Nossa equipe vai entrar em contato pelo WhatsApp para indicar o melhor curso para o seu momento!</p>
-    <a class="wa-btn" id="waLink" href="https://wa.me/5521991143254?text=Ol%C3%A1%21+Acabei+de+preencher+o+formul%C3%A1rio+de+diagn%C3%B3stico+no+site+da+Decole+e+gostaria+de+saber+qual+curso+%C3%A9+o+ideal+para+mim%21" target="_blank" rel="noopener">
-      💬 Falar agora no WhatsApp
-    </a>
   </div>
 
   <footer class="site-footer">
@@ -481,8 +477,6 @@ body::after{
 const STEPS = [
   { sec:'Identificação',      id:'nome',        type:'text',     q:'Qual é o seu nome completo?',                                          ph:'Seu nome completo',           req:true  },
   { sec:'Identificação',      id:'idade',        type:'number',   q:'Qual é a sua idade?',                                                  ph:'Ex: 18',                      req:true  },
-  { sec:'Identificação',      id:'whatsapp',     type:'tel',      q:'Qual é o seu WhatsApp?',                                               ph:'(21) 99999-9999',             req:true  },
-  { sec:'Identificação',      id:'email',        type:'email',    q:'Qual é o seu e-mail?',                                                 ph:'seu@email.com',               req:false },
   { sec:'Experiência',        id:'computador',   type:'radio',    q:'Você já sabe usar computador?',                                        opts:['Nunca usei','Sei o básico','Tenho nível intermediário','Já tenho bastante experiência'] },
   { sec:'Experiência',        id:'facilidade',   type:'radio',    q:'Você se considera uma pessoa que aprende tecnologia com facilidade?',  opts:['Sim','Mais ou menos','Tenho bastante dificuldade'] },
   { sec:'Experiência',        id:'situacao',     type:'radio',    q:'Hoje você está:',                                                      opts:['Estudando','Trabalhando','Procurando emprego','Outro'] },
@@ -604,11 +598,8 @@ function submit(){
     access_key:'ac6c81fb-a9f5-4ef8-b491-60c793382b1c',
     subject:'🚀 Diagnóstico Decole — '+(ans.nome||'Novo Lead'),
     from_name:'Site Decole',
-    replyto: ans.email||'',
     'Nome completo': ans.nome||'',
     'Idade': ans.idade||'',
-    'WhatsApp': ans.whatsapp||'',
-    'Email': ans.email||'',
     'Usa computador': ans.computador||'',
     'Aprende tecnologia': ans.facilidade||'',
     'Situação atual': ans.situacao||'',
